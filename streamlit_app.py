@@ -21,7 +21,7 @@ def get_gemini_response(model, question, user_type, context):
     full_prompt = f"""
     {context}
 
-    You are an AI assistant for Tempe Envision Center. Always be helpful, friendly, and informative. 
+    You are an AI assistant for CTEC. Always be helpful, friendly, and informative. 
     {user_type_prompts.get(user_type, '')}
     
     If asked about information not provided in the context, politely state that you don't have that specific information 
@@ -34,42 +34,32 @@ def get_gemini_response(model, question, user_type, context):
     return response.text
 
 # Streamlit app
-st.title("Tempe Envision Center Assistant")
+st.title("CTEC Center Assistant")
 
 # Sidebar for context input (for demo purposes, normally this would be pre-set)
 #st.sidebar.title("Set Envision Center Information")
 context_input = """
-    Tempe Envision Center Information:
-    - Location: 1600 E Apache Blvd, Tempe, AZ 85281
-    - Hours: Monday-Friday 8:30am-5pm, Saturday Closed, Closed on Sundays
-    - Contact: (480) 350-5400
+    CTEC Center Information:
+    - Location: 1150 S 7th Ave, Phoenix, AZ 85007
+    - Hours: Monday-Friday 8:30am-5pm
+    - Contact: 602-534-2043
     - Facilities: Computer Lab, Meeting Rooms, Classrooms, Workforce Development Center
-    - Programs:
-      * Adult Education: GED Classes, English Language Learning
-      * Workforce Development: Job Search Assistance, Resume Writing Workshops
-      * Youth Programs: After-school Tutoring, STEM Workshops
-      * Community Services: Housing Assistance, Financial Literacy Classes
+    - Senior Programs:
+      They assist in many different areas including, business or medical correspondence, finances, discounted telephone service, counseling, emergency food boxes, etc. For assistance, please schedule an appointment with the on-site caseworker.  Learn more about housing for seniors and disabled persons.​
+        Aeroterra Senior Housing 602-601-7168
+        Fillmore Gardens 602-534-1174
+        Maryvale Parkway 602-534-1989
+        Pine Tower 602-261-8034
+        Senior Living at Henson Village 602-534-2043
+        Sunnyslope Manor 602-256-5638
+        Washington Manor 602-534-2657
     - Services: 
       * Free Wi-Fi
       * Computer Access
       * Printing and Copying (fees may apply)
-      The Tempe EnVision Center at 1310 E. Apache Blvd. is the city's unique resource and resilience hub that aims to provide a one-stop shop for:
-      *Employment
-      *Education
-      *Technology access and support
-      *Local food programs
-      *Emergency preparedness
-      *Health and wellness
-      *And more!
        
-The center is designed to encourage connection and collaboration in an open, modern space. The center features:
-
-Several meeting spaces for community members, neighborhood groups and local organizations
-Booths for one-on-one sessions and collaboration
-Colorful, comfortable seating throughout
-A café space for snacks
-The center is a partnership among Tempe's Community Health and Human Services Department, Sustainability and Resilience Divison and Emergency Management. 
-
+The Emmett McLoughlin CTEC is a community center located on the periphery of Henson Village.  The center is an access point for ARIZONA@WORK​ Phoenix. 
+Services offered include resume and cover letter writing assistance, job search, internet access, job readiness workshops and r​eferrals to the comprehensive One Stop Centers.
     """
 
 #if st.sidebar.button("Update Center Information"):
@@ -136,11 +126,11 @@ else:
 st.sidebar.title("How to Use")
 st.sidebar.markdown("""
 1. Select your user type (Kid, Adult, or Senior).
-2. Ask questions about Tempe Envision Center in the chat interface.
+2. Ask questions about CTEC Center in the chat interface.
 3. The AI will provide information based on your user type and the center's details.
 
 Quick Links:
-* Envision Center Website: https://www.tempe.gov/government/community-health-and-human-services/envision-center
-* Homeless Outreach: https://www.tempe.gov/government/community-health-and-human-services/housing-services/ending-homelessness/homeless-outreach
+* CTEC Center Website: https://www.phoenix.gov/housing/resident-resources
+* City of Phoenix Services: https://arizonaatwork.com/locations/city-phoenix/partners
 
 """)
